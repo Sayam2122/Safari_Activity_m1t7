@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Object Detective - Learn How AI Works</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- SECTION 1: INTRO SCREEN -->
+    <section id="intro-screen" class="screen active">
+        <div class="container">
+            <div class="content-card intro-card">
+                <h1 class="main-title">AI Object Detective</h1>
+                <h2 class="subtitle">Learn how AI identifies everyday objects</h2>
+                <p class="intro-text">
+                    Get ready for a fun and interactive adventure into Artificial Intelligence!<br>
+                    In this activity, you'll explore how AI tools like Google Lens recognize objects using images.
+                </p>
+                <button class="btn-primary" onclick="goToSection('how-to-play-screen')">Start Activity</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1.5: HOW TO PLAY SCREEN -->
+    <section id="how-to-play-screen" class="screen">
+        <div class="container">
+            <div class="how-to-play-wrapper">
+                <h1 class="how-to-title">How to Play</h1>
+                
+                <div class="how-to-play-grid">
+                    <div class="play-step-card">
+                        <div class="step-number">1</div>
+                        <h3>Choose Your AI Tool</h3>
+                        <p>We'll show you AI-powered tools to explore</p>
+                    </div>
+
+                    <div class="play-step-card">
+                        <div class="step-number">2</div>
+                        <h3>Follow Step-by-Step Instructions</h3>
+                        <p>Capture an object and let AI identify it</p>
+                    </div>
+
+                    <div class="play-step-card">
+                        <div class="step-number">3</div>
+                        <h3>Learn How AI Works</h3>
+                        <p>Discover the secrets behind AI detection</p>
+                    </div>
+
+                    <div class="play-step-card">
+                        <div class="step-number">4</div>
+                        <h3>Take the Quiz</h3>
+                        <p>Test your understanding of how AI works</p>
+                    </div>
+                </div>
+
+                <button class="btn-primary begin-btn" onclick="goToSection('tools-screen')">BEGIN LEVEL 1</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: TOOLS FOR AI SAFARI -->
+    <section id="tools-screen" class="screen">
+        <div class="container">
+            <h2 class="section-title">Tools for AI Safari</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">📷</div>
+                    <h3>Google Lens</h3>
+                    <p>An AI-powered tool that identifies objects using your phone camera.</p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🔍</div>
+                    <h3>Similar Image Search</h3>
+                    <p>Upload an image to find visually similar images on the web.</p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">💡</div>
+                    <h3>Pinterest Lens</h3>
+                    <p>Discover ideas inspired by objects you see in the real world.</p>
+                </div>
+            </div>
+            <button class="btn-primary" onclick="goToSection('concept-screen')">Continue</button>
+        </div>
+    </section>
+
+    <!-- SECTION 3: AI DETECTIVE STEPS -->
+    <section id="concept-screen" class="screen">
+        <div class="container">
+            <div class="slide-container">
+                <!-- Slide 1: Part 1 - Capture Your Subject -->
+                <div class="slide active-slide" data-slide="1">
+                    <div class="content-card slide-card">
+                        <div class="slide-number">Step 1 of 4</div>
+                        <h2 class="slide-title">Your AI Detective Steps: Part 1</h2>
+                        <h3 class="slide-subtitle">📸 Capture Your Subject</h3>
+                        <p class="slide-text">
+                            Let's get started! Take or upload a clear photo of one of the following items:
+                        </p>
+                        <ul class="bullet-list">
+                            <li>🌿 A vibrant Plant</li>
+                            <li>👟 A cool Shoe</li>
+                            <li>📚 An interesting Book</li>
+                            <li>🎯 Any Random object near you!</li>
+                        </ul>
+                        <div class="key-takeaway">
+                            <span class="key-label">Get Ready:</span>
+                            <p>Choose any object around you and prepare to photograph it!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Part 2 - Let AI Do Its Magic -->
+                <div class="slide" data-slide="2">
+                    <div class="content-card slide-card">
+                        <div class="slide-number">Step 2 of 4</div>
+                        <h2 class="slide-title">Your AI Detective Steps: Part 2</h2>
+                        <h3 class="slide-subtitle">✨ Let AI Do Its Magic</h3>
+                        <p class="slide-text">
+                            Once you've captured your image, let the AI tool take over and identify what it sees.
+                        </p>
+                        <p class="slide-text">
+                            Watch closely as the AI analyzes your photo!
+                        </p>
+                        <div class="key-takeaway">
+                            <span class="key-label">Observe:</span>
+                            <p>Pay attention to how quickly the AI responds and what it identifies.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Report Your Findings -->
+                <div class="slide" data-slide="3">
+                    <div class="content-card slide-card">
+                        <div class="slide-number">Step 3 of 4</div>
+                        <h2 class="slide-title">Report Your Findings!</h2>
+                        <p class="slide-text">
+                            After the AI has made its guess, evaluate its performance. Choose the option that best describes the AI's accuracy:
+                        </p>
+                        <div class="findings-grid">
+                            <div class="finding-card correct-card">
+                                <div class="finding-icon">✓</div>
+                                <h4>Correct</h4>
+                                <p>The AI nailed it! Perfect identification.</p>
+                            </div>
+                            <div class="finding-card almost-card">
+                                <div class="finding-icon">≈</div>
+                                <h4>Almost Correct</h4>
+                                <p>A good effort, but maybe a minor detail was off.</p>
+                            </div>
+                            <div class="finding-card wrong-card">
+                                <div class="finding-icon">✗</div>
+                                <h4>Wrong</h4>
+                                <p>Oops! The AI got it totally wrong.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: The AI Behind the Scenes -->
+                <div class="slide" data-slide="4">
+                    <div class="content-card slide-card">
+                        <div class="slide-number">Step 4 of 4</div>
+                        <h2 class="slide-title">The AI Behind the Scenes</h2>
+                        <p class="slide-text">
+                            Let's uncover the secrets of how AI "recognizes" objects and what those guesses really mean:
+                        </p>
+                        <div class="behind-scenes-list">
+                            <div class="behind-item">
+                                <div class="behind-icon">🖼️</div>
+                                <div class="behind-content">
+                                    <h4>Training with Millions of Images</h4>
+                                    <p>AI compares your image with millions of trained images it has learned from. It's like a super-fast matching game!</p>
+                                </div>
+                            </div>
+                            <div class="behind-item">
+                                <div class="behind-icon">🎯</div>
+                                <div class="behind-content">
+                                    <h4>Guessing the Closest Match</h4>
+                                    <p>The AI doesn't "know" what it is, it just guesses the closest match based on patterns it has seen.</p>
+                                </div>
+                            </div>
+                            <div class="behind-item">
+                                <div class="behind-icon">⚙️</div>
+                                <div class="behind-content">
+                                    <h4>Wrong Guesses Aren't Breakdowns</h4>
+                                    <p>Wrong guesses don't mean the AI is broken! It means it has limited training on certain objects or situations.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="key-takeaway">
+                            <span class="key-label">Next Up:</span>
+                            <p>Now answer the following questions to test your understanding!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-navigation">
+                <button class="btn-secondary" id="prevBtn" onclick="changeSlide(-1)" disabled>Previous</button>
+                <div class="slide-dots" id="slideDots"></div>
+                <button class="btn-primary" id="nextBtn" onclick="changeSlide(1)">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: QUIZ SECTION -->
+    <section id="quiz-screen" class="screen">
+        <div class="container">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h2 class="section-title">Test Your Knowledge</h2>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                    <p class="question-counter" id="questionCounter">Question 1 of 12</p>
+                </div>
+
+                <div class="question-card" id="questionCard">
+                    <h3 class="question-text" id="questionText"></h3>
+                    <div class="options-container" id="optionsContainer"></div>
+                    <button class="btn-primary" id="submitBtn" onclick="submitAnswer()" disabled>Submit Answer</button>
+                </div>
+
+                <div class="feedback-card" id="feedbackCard" style="display: none;">
+                    <div class="feedback-content">
+                        <div class="feedback-icon" id="feedbackIcon"></div>
+                        <p class="feedback-text" id="feedbackText"></p>
+                        <button class="btn-primary" onclick="nextQuestion()">Next Question</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: AI INSIGHT SCREEN (moved from slides) -->
+    <section id="insight-screen" class="screen">
+        <div class="container">
+            <div class="content-card slide-card">
+                <h2 class="slide-title">Your AI Insight</h2>
+                <div class="insight-box">
+                    <div class="insight-quote">
+                        <span class="quote-icon">💡</span>
+                        <h3>"AI doesn't recognize — it matches!"</h3>
+                    </div>
+                </div>
+                <p class="slide-text">
+                    Remember this golden rule! AI is a powerful tool for pattern recognition and matching, not for genuine understanding or consciousness.
+                </p>
+                <div class="key-takeaway">
+                    <span class="key-label">Keep Exploring:</span>
+                    <p>Keep asking questions about how these amazing technologies work!</p>
+                </div>
+                <button class="btn-primary" onclick="goToSection('final-screen')">Continue</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: FINAL SCREEN -->
+    <section id="final-screen" class="screen">
+        <div class="container">
+            <div class="content-card final-card">
+                <div class="final-icon">🎯</div>
+                <h1 class="final-title">Congratulations!</h1>
+                <div class="score-display" id="scoreDisplay"></div>
+                
+                <div class="key-message">
+                    <h2>"AI doesn't recognize objects — it matches patterns."</h2>
+                </div>
+
+                <div class="encouragement-box">
+                    <h3>Remember to:</h3>
+                    <ul class="encouragement-list">
+                        <li>✓ Think critically about AI outputs</li>
+                        <li>✓ Verify AI results with your own knowledge</li>
+                        <li>✓ Stay curious about how AI works</li>
+                    </ul>
+                </div>
+
+                <button class="btn-primary" onclick="restartActivity()">Restart Activity</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Elements -->
+    <audio id="correctSound" preload="auto">
+        <source src="sound/correct_sound.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="wrongSound" preload="auto">
+        <source src="sound/wrong_sound.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="clockSound" preload="auto">
+        <source src="sound/clock_sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
