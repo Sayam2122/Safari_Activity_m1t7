@@ -57,11 +57,11 @@ const quizQuestions = [
         question: "What helps AI become better at identifying objects?",
         options: [
             "Bigger phone",
-            "More training images",
             "Louder voice",
-            "Faster internet"
+            "Faster internet",
+            "More training images"
         ],
-        correct: 1,
+        correct: 3,
         correctFeedback: "Correct! More examples improve AI accuracy.",
         wrongFeedback: "Wrong. Phone or internet speed does not help learning."
     },
@@ -394,6 +394,9 @@ function showFinalScreen() {
     // Update progress to 100%
     document.getElementById('progressBar').style.width = '100%';
     
+    // Stop all sounds
+    stopAllSounds();
+    
     // Calculate percentage
     const percentage = Math.round((score / quizQuestions.length) * 100);
     
@@ -438,6 +441,22 @@ function playSound(type) {
             console.log('Audio play failed:', err);
         });
     }
+}
+
+// Stop all sounds
+function stopAllSounds() {
+    const sounds = [
+        document.getElementById('correctSound'),
+        document.getElementById('wrongSound'),
+        document.getElementById('clockSound')
+    ];
+    
+    sounds.forEach(sound => {
+        if (sound) {
+            sound.pause();
+            sound.currentTime = 0;
+        }
+    });
 }
 
 // Initialize on page load
