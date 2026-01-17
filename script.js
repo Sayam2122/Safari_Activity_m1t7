@@ -8,6 +8,8 @@ const totalSlides = 4;
 let currentQuestion = 0;
 let selectedOption = null;
 let score = 0;
+let timer = null;
+let timeLeft = 30;
 
 // Sound elements
 let correctSound, wrongSound, clockSound;
@@ -298,6 +300,12 @@ function loadQuestion() {
         return;
     }
     
+    // Reset and start timer
+    clearInterval(timer);
+    timeLeft = 30;
+    updateTimerDisplay();
+    startTimer();
+    
     // Play clock sound when loading a new question
     playSound('clock');
     
@@ -353,10 +361,16 @@ function selectOption(index) {
 }
 
 function submitAnswer() {
-    if (selectedOption === null) return;
+    if (selectedOption === null && selectedOption !== -1) return;
+    
+    // Stop timer
+    clearInterval(timer);
     
     const question = quizQuestions[currentQuestion];
-    const isCorrect = selectedOption === question.correct;
+    
+    // Check if it's a timeout (selectedOption = -1)
+    const isTimeout = selectedOption === -1;
+    const isCorrect = !isTimeout && selectedOption === question.correct;
     
     if (isCorrect) {
         score++;
@@ -370,7 +384,11 @@ function submitAnswer() {
     const feedbackIcon = document.getElementById('feedbackIcon');
     const feedbackText = document.getElementById('feedbackText');
     
-    if (isCorrect) {
+    if (isTimeout) {
+        feedbackCard.className = 'feedback-card incorrect';
+        feedbackIcon.textContent = '⏰';
+        feedbackText.textContent = "Time's up! " + question.wrongFeedback;
+    } else if (isCorrect) {
         feedbackCard.className = 'feedback-card correct';
         feedbackIcon.textContent = '✅';
         feedbackText.textContent = question.correctFeedback;
@@ -417,6 +435,42 @@ function restartActivity() {
     selectedOption = null;
     score = 0;
     goToSection('intro-screen');
+}
+
+// ========================================
+// TIMER FUNCTIONS
+// ========================================
+
+function startTimer() {
+    timer = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+        
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            handleTimeout();
+        }
+    }, 1000);
+}
+
+function updateTimerDisplay() {
+    const timerElement = document.getElementById('timer');
+    if (timerElement) {
+        timerElement.textContent = `⏱️ ${timeLeft}s`;
+        
+        // Add warning class when time is running out
+        if (timeLeft <= 10) {
+            timerElement.classList.add('warning');
+        } else {
+            timerElement.classList.remove('warning');
+        }
+    }
+}
+
+function handleTimeout() {
+    // Treat timeout as wrong answer
+    selectedOption = -1; // Invalid option
+    submitAnswer();
 }
 
 // ========================================

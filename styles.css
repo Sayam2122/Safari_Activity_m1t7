@@ -392,10 +392,44 @@ body::before {
     width: 0%;
 }
 
+.quiz-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
 .question-counter {
     color: #0B6FB8;
     font-weight: 600;
     font-size: 1.1rem;
+}
+
+.timer {
+    color: #00B6C9;
+    font-weight: 700;
+    font-size: 1.2rem;
+    background: rgba(0, 182, 201, 0.1);
+    padding: 8px 20px;
+    border-radius: 25px;
+    border: 2px solid #00B6C9;
+}
+
+.timer.warning {
+    color: #FF5252;
+    border-color: #FF5252;
+    background: rgba(255, 82, 82, 0.1);
+    animation: pulse 0.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 .question-card {
@@ -522,79 +556,82 @@ body::before {
    ======================================== */
 
 .final-card {
-    max-width: 800px;
+    max-width: 700px;
 }
 
 .final-icon {
-    font-size: 6rem;
-    margin-bottom: 20px;
+    font-size: 4rem;
+    margin-bottom: 15px;
 }
 
 .final-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #0B6FB8;
     font-weight: 800;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .score-display {
     background: linear-gradient(135deg, #E8F8FF 0%, #D4F1F9 100%);
-    border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 40px;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 30px;
 }
 
 .score-display h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #0B6FB8;
     font-weight: 700;
 }
 
 .score-display p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #555;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .key-message {
     background: linear-gradient(135deg, #0B6FB8 0%, #00B6C9 100%);
     color: white;
-    border-radius: 20px;
-    padding: 35px;
-    margin-bottom: 40px;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
 }
 
 .key-message h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     line-height: 1.5;
 }
 
 .encouragement-box {
     background: #F5FCFF;
-    border-radius: 20px;
-    padding: 35px;
-    margin-bottom: 40px;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 30px;
     text-align: left;
 }
 
 .encouragement-box h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #0B6FB8;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
 }
 
 .encouragement-list {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .encouragement-list li {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     color: #555;
-    padding: 12px 0;
+    padding: 8px 0;
     font-weight: 600;
 }
 
